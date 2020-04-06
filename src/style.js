@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 export const foregroundColor = 'white';
 export const backgroundColor = '#f2F4f5'; // Agenda's reservations bg color
 
