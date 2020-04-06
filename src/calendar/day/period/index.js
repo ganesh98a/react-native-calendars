@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
-import {TouchableWithoutFeedback, Text, View} from 'react-native';
+import {TouchableWithoutFeedback, Text, View, Platform} from 'react-native';
 import {shouldUpdate} from '../../../component-updater';
 
 import * as defaultStyle from '../../../style';
