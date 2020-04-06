@@ -127,7 +127,7 @@ class Day extends Component {
 
     if (this.props.marking) {
       containerStyle.push({
-        borderRadius: 17
+        borderRadius: Platform.isPad ? 34 : 17
       });
 
       const flags = this.markingStyle;
@@ -152,7 +152,8 @@ class Day extends Component {
           backgroundColor: flags.startingDay.color
         };
         containerStyle.push({
-          backgroundColor: flags.startingDay.color
+          backgroundColor: flags.startingDay.color,
+          borderRadius: Platform.isPad ? 34 : 17
         });
       } else if (flags.endingDay && !flags.startingDay) {
         rightFillerStyle = {
@@ -162,7 +163,8 @@ class Day extends Component {
           backgroundColor: flags.endingDay.color
         };
         containerStyle.push({
-          backgroundColor: flags.endingDay.color
+          backgroundColor: flags.endingDay.color,
+          borderRadius: Platform.isPad ? 34 : 17
         });
       } else if (flags.day) {
         leftFillerStyle = {backgroundColor: flags.day.color};
@@ -177,7 +179,8 @@ class Day extends Component {
           backgroundColor: this.theme.calendarBackground
         };
         containerStyle.push({
-          backgroundColor: flags.endingDay.color
+          backgroundColor: flags.endingDay.color,
+          borderRadius: Platform.isPad ? 34 : 17
         });
       }
 

@@ -1,9 +1,10 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import * as defaultStyle from '../../../style';
 
 
 const STYLESHEET_ID = 'stylesheet.day.period';
-const FILLER_HEIGHT = 34;
+
+const FILLER_HEIGHT = Platform.isPad ? 60 : 34;
 
 export default function styleConstructor(theme={}) {
   const appStyle = {...defaultStyle, ...theme};
@@ -15,9 +16,10 @@ export default function styleConstructor(theme={}) {
     },
     base: {
       //borderWidth: 1,
-      width: 38,
+      width: Platform.isPad ? 60 : 38,
       height: FILLER_HEIGHT,
-      alignItems: 'center'
+      alignItems: 'center',
+      justifyContent: 'center'
     },
     fillers: {
       position: 'absolute',
@@ -35,11 +37,11 @@ export default function styleConstructor(theme={}) {
       flex: 1
     },
     text: {
-      marginTop: 7,
+      marginTop: 0,
       fontSize: appStyle.textDayFontSize,
       fontFamily: appStyle.textDayFontFamily,
       fontWeight: appStyle.textDayFontWeight,
-      color: appStyle.dayTextColor,
+      color: appStyle.dayTextColor || '#2d4150',
       backgroundColor: 'rgba(255, 255, 255, 0)'
     },
     today: {
@@ -47,7 +49,7 @@ export default function styleConstructor(theme={}) {
     },
     todayText: {
       fontWeight: '500',
-      color: theme.todayTextColor || appStyle.dayTextColor
+      color: theme.todayTextColor || appStyle.dayTextColor,
       //color: appStyle.textLinkColor
     },
     disabledText: {
